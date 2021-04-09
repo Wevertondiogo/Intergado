@@ -1,4 +1,4 @@
-<p>
+<!-- <p>
   <img src="../../../../assets/images/svg/zoology.svg"
        style="width: 40px;">
   <span class="titulo">Entrevista Intergado</span>
@@ -24,4 +24,23 @@
   <p>2.3. Crie um link na frente de cada item da lista e, usando o endpoint "excluir", remova o registro quando o link
     for clicado. Atualize a lista em seguida.</p>
 
-</div>
+</div> -->
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Manejo</th>
+      <th scope="col">Tag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let animal of animals">
+      <th scope="row">{{animal.id}}</th>
+      <td> {{animal.manejo}} </td>
+      <td> {{animal.tag}} </td>
+    </tr>
+  </tbody>
+</table>

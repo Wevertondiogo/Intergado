@@ -22,9 +22,9 @@ export class CrudService {
 
   constructor(private _http: HttpClient) {}
 
-  public GetAnimals(): Observable<Animal> {
+  public GetAnimals(): Observable<Animal[]> {
     return this._http
-      .get<Animal>(this.urlAnimals)
+      .get<Animal[]>(this.urlAnimals)
       .pipe(retry(2), catchError(this.handleError));
   }
 

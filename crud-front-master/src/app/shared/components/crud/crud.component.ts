@@ -8,6 +8,7 @@ import { Animal } from "src/app/models/Animal.model";
   styleUrls: ["./crud.component.css"],
 })
 export class CrudComponent implements OnInit {
+  animals: Animal[];
   constructor(private _crudService: CrudService) {}
 
   ngOnInit() {
@@ -19,7 +20,7 @@ export class CrudComponent implements OnInit {
   private GetAnimals() {
     this._crudService
       .GetAnimals()
-      .subscribe((animal: Animal) => console.log(animal));
+      .subscribe((animal: Animal[]) => (this.animals = animal));
   }
 
   public AddAnimal() {
