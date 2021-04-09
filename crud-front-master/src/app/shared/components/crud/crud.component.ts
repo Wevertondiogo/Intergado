@@ -11,12 +11,26 @@ export class CrudComponent implements OnInit {
   constructor(private _crudService: CrudService) {}
 
   ngOnInit() {
-    this.getAnimals;
+    this.GetAnimals();
+    // this.AddAnimal();
+    // this.DeleteAnimal();
   }
 
-  private getAnimals() {
+  private GetAnimals() {
     this._crudService
-      .getAnimals()
+      .GetAnimals()
       .subscribe((animal: Animal) => console.log(animal));
+  }
+
+  public AddAnimal() {
+    this._crudService
+      .AddAnimal({ manejo: "Albino", tag: "87458548" })
+      .subscribe(() => console.log("Animal adicionado"));
+  }
+
+  public DeleteAnimal() {
+    this._crudService
+      .DeleteAnimal(1)
+      .subscribe(() => console.log("Animal deletado!"));
   }
 }
