@@ -1,4 +1,5 @@
 export interface Animal {
+  id?: number;
   manejo: string;
-  tag: number;
+  tag: string;
 }

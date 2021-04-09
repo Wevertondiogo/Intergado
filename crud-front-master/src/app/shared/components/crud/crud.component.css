@@ -1,4 +1,4 @@
-.titulo {
+/* .titulo {
   line-height: 40px;
   vertical-align: bottom;
   padding-left: 20px;
@@ -11,4 +11,24 @@
 
 .resposta {
   padding: 10px;
+} */
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  margin: 20px auto;
+}
+
+.table {
+  width: 60%;
+}
+.container-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-success {
+  margin: 0 auto;
 }

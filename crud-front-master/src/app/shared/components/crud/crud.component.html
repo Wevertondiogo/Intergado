@@ -27,20 +27,27 @@
 </div> -->
 
 
+<div class="container-fluid">
 
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Manejo</th>
-      <th scope="col">Tag</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let animal of animals">
-      <th scope="row">{{animal.id}}</th>
-      <td> {{animal.manejo}} </td>
-      <td> {{animal.tag}} </td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Manejo</th>
+        <th scope="col">Tag</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let animal of animals">
+        <th scope="row">{{animal.id}}</th>
+        <td> {{animal.manejo}} </td>
+        <td> {{animal.tag}} </td>
+        <td><button class="btn btn-outline-danger" (click)="DeleteAnimal()">Deletar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container-btn">
+    <button class="btn bt-lg btn-success">Adicionar animal</button>
+  </div>
+</div>

@@ -6,10 +6,11 @@ import { CrudService } from './core/services/crud.service';
 import { CrudComponent } from './shared/components/crud/crud.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, CrudComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, BrowserAnimationsModule],
   providers: [CrudService],
   bootstrap: [AppComponent],
   exports: [ReactiveFormsModule]
