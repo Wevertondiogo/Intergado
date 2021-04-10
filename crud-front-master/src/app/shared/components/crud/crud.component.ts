@@ -1,6 +1,9 @@
-import { CrudService } from "./../../../core/services/crud.service";
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
+
+import { CrudService } from "./../../../core/services/crud.service";
 import { Animal } from "src/app/models/Animal.model";
+import { DialogComponent } from "../dialog/dialog.component";
 
 @Component({
   selector: "app-crud",
@@ -9,12 +12,14 @@ import { Animal } from "src/app/models/Animal.model";
 })
 export class CrudComponent implements OnInit {
   animals: Animal[];
-  constructor(private _crudService: CrudService) {}
+  constructor(private _crudService: CrudService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.GetAnimals();
-    // this.AddAnimal();
-    // this.DeleteAnimal();
+  }
+
+  openDialog() {
+    this.dialog.open(DialogComponent);
   }
 
   private GetAnimals() {
@@ -23,15 +28,9 @@ export class CrudComponent implements OnInit {
       .subscribe((animal: Animal[]) => (this.animals = animal));
   }
 
-  public AddAnimal() {
-    this._crudService
-      .AddAnimal({ manejo: "Albino", tag: "87458548" })
-      .subscribe(() => console.log("Animal adicionado"));
-  }
-
-  public DeleteAnimal() {
-    this._crudService
-      .DeleteAnimal(1)
-      .subscribe(() => console.log("Animal deletado!"));
+  public DeleteAnimal(id) {
+    this._crudService.DeleteAnimal(id).subscribe(() => {
+      this.GetAnimals();
+    });
   }
 }

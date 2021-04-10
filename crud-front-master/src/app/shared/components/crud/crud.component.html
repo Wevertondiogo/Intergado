@@ -27,27 +27,21 @@
 </div> -->
 
 
-<div class="container-fluid">
+<div class="container">
 
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Manejo</th>
-        <th scope="col">Tag</th>
-        <th scope="col">Opções</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let animal of animals">
-        <th scope="row">{{animal.id}}</th>
-        <td> {{animal.manejo}} </td>
-        <td> {{animal.tag}} </td>
-        <td><button class="btn btn-outline-danger" (click)="DeleteAnimal()">Deletar</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="container-btn">
-    <button class="btn bt-lg btn-success">Adicionar animal</button>
+  <mat-list role="list" class="list">
+    <mat-list-item role="listitem" class="list-item" *ngFor="let animal of animals" >
+      <p>Manejo: {{animal.manejo}} </p>
+      <p>Tag: {{animal.tag}} </p>
+      <p>
+        <button class="btn btn-delete" (click)="DeleteAnimal(animal.id)">Remover</button>
+      </p>
+    </mat-list-item>
+  </mat-list>
+
+  <div class="box">
+    <button class="btn btn-add mat-raised-button" (click)="openDialog()">Adicionar animal</button>
+
   </div>
 </div>
+

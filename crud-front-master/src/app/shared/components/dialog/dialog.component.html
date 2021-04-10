@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Adicione um animal</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="form" [formGroup]="formAnimal">
+        
+        <mat-form-field class="form-field">
+            <mat-label>Manejo</mat-label>
+            <input type="text" matInput formControlName="manejo" required>
+            <mat-error *ngIf="manejoRequired">Este campo é obrigatório.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+           <mat-label>Tag</mat-label>
+           <input type="text" matInput formControlName="tag" required>
+           <mat-error *ngIf="tagRequired">Este campo é obrigatório.</mat-error>
+        </mat-form-field>
+    </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end" class="dialog-footer">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button class="btn-submit" type="submit" (click)="AddAnimal()" [disabled]="this.formAnimal.invalid">Adicionar</button>
+</mat-dialog-actions>

@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  &-field {
+  }
+}
+.dialog-footer {
+  padding-bottom: 22px;
+  .btn-submit {
+    background-color: #069706;
+    color: #fff;
+    &:disabled {
+      opacity: 0.5;
+      cursor: no-drop;
+    }
+  }
+}
