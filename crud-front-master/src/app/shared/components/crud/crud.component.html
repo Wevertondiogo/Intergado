@@ -30,7 +30,7 @@
 <div class="container">
 
   <mat-list role="list" class="list">
-    <mat-list-item role="listitem" class="list-item" *ngFor="let animal of animals" >
+    <mat-list-item role="listitem" class="list-item" *ngFor="let animal of animals$ | async" >
       <p>Manejo: {{animal.manejo}} </p>
       <p>Tag: {{animal.tag}} </p>
       <p>
@@ -40,7 +40,7 @@
   </mat-list>
 
   <div class="box">
-    <button class="btn btn-add mat-raised-button" (click)="openDialog()">Adicionar animal</button>
+    <button class="btn btn-add mat-raised-button" [routerLink]="['add/animal']">Adicionar animal</button>
 
   </div>
 </div>

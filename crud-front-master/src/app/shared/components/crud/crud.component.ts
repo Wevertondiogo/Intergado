@@ -1,31 +1,28 @@
-import { Component, OnInit } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
+import { Observable } from "rxjs";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 
 import { CrudService } from "./../../../core/services/crud.service";
 import { Animal } from "src/app/models/Animal.model";
-import { DialogComponent } from "../dialog/dialog.component";
 
 @Component({
   selector: "app-crud",
   templateUrl: "./crud.component.html",
   styleUrls: ["./crud.component.css"],
 })
-export class CrudComponent implements OnInit {
-  animals: Animal[];
-  constructor(private _crudService: CrudService, private dialog: MatDialog) {}
+export class CrudComponent implements OnInit, OnDestroy {
+  animals$: Observable<Animal[]>;
+  constructor(private _crudService: CrudService) {}
 
   ngOnInit() {
     this.GetAnimals();
   }
 
-  openDialog() {
-    this.dialog.open(DialogComponent);
+  ngOnDestroy() {
+    // this._crudService.AddAnimal.unsubscribe()
   }
 
   private GetAnimals() {
-    this._crudService
-      .GetAnimals()
-      .subscribe((animal: Animal[]) => (this.animals = animal));
+    this.animals$ = this._crudService.GetAnimals();
   }
 
   public DeleteAnimal(id) {

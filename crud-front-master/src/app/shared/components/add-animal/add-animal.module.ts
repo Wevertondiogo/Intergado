@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
-import { DialogComponent } from "./dialog.component";
+import { AddAnimalComponent } from "./add-animal.component";
 
-import { MatDialogModule } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -11,16 +11,16 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
-  declarations: [DialogComponent],
+  declarations: [AddAnimalComponent],
   imports: [
     CommonModule,
+    MatButtonModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
-    MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
   ],
-  exports: [DialogComponent],
+  exports: [AddAnimalComponent],
 })
-export class DialogModule {}
+export class AddAnimalModule {}

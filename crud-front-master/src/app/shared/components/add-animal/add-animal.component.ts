@@ -1,16 +1,16 @@
 import { CrudService } from "./../../../core/services/crud.service";
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Animal } from "src/app/models/Animal.model";
+import { FormBuilder, FormGroup, NgForm, Validators } from "@angular/forms";
 
 @Component({
-  selector: "app-dialog",
-  templateUrl: "./dialog.component.html",
-  styleUrls: ["./dialog.component.scss"],
+  selector: "app-add-animal",
+  templateUrl: "./add-animal.component.html",
+  styleUrls: ["./add-animal.component.scss"],
 })
-export class DialogComponent implements OnInit {
+export class AddAnimalComponent implements OnInit {
   formAnimal: FormGroup;
-  constructor(private fb: FormBuilder, private _crudService: CrudService) {}
+
+  constructor(private fb: FormBuilder, private _curdService: CrudService) {}
 
   ngOnInit() {
     this.CreateForm();
@@ -23,13 +23,13 @@ export class DialogComponent implements OnInit {
     });
   }
 
-  public AddAnimal() {
+  SaveAnimal(form: NgForm) {
     const animal = this.formAnimal.value;
-    this._crudService.AddAnimal(animal).subscribe(() => this.GetAnimals());
-  }
+    this._curdService.AddAnimal(animal).subscribe(() => {
+      console.log("AnimalSalvo!!!");
 
-  private GetAnimals() {
-    this._crudService.GetAnimals().subscribe(() => console.log("..."));
+      form.resetForm();
+    });
   }
 
   public get manejoRequired() {

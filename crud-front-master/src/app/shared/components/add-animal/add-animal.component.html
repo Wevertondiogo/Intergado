@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="box">
+        <h2 class="title">Adicione um animal</h2>
+        <span class="spacer"></span>
+        <button class="btn btn-back mat-raised-button" [routerLink]="['']">Voltar</button>
+    </div>
+    <form class="form" [formGroup]="formAnimal" (ngSubmit)="SaveAnimal(form)" #form ="ngForm">
+
+        <mat-form-field >
+            <mat-label>Manejo</mat-label>
+            <input type="text" matInput formControlName="manejo" required>
+            <mat-error *ngIf="manejoRequired">Este campo é obrigatório.</mat-error>
+        </mat-form-field>
+        <mat-form-field >
+            <mat-label>Tag</mat-label>
+            <input type="text" matInput formControlName="tag" required>
+            <mat-error *ngIf="tagRequired">Este campo é obrigatório.</mat-error>
+        </mat-form-field>
+        <button class="btn btn-submit mat-raised-button" [disabled]="this.formAnimal.invalid">Salvar</button>
+    </form>
+</div>

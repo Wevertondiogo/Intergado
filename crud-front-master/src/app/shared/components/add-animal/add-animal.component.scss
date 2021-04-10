@@ -1,0 +1,36 @@
+.container {
+  padding: 20px;
+
+  .box {
+    display: flex;
+    align-items: center;
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+    .btn-back {
+      background-color: red;
+      color: #fff;
+    }
+  }
+
+  .form {
+    display: flex;
+    // justify-content: center;
+    flex-direction: column;
+
+    margin-top: 20px;
+
+    .btn-submit {
+      background-color: #069706;
+      color: #fff;
+
+      margin-top: 8px;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: no-drop;
+      }
+    }
+  }
+}
