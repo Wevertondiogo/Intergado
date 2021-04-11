@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { CrudService } from "./../../../core/services/crud.service";
 import { Animal } from "src/app/models/Animal.model";
@@ -9,16 +9,12 @@ import { Animal } from "src/app/models/Animal.model";
   templateUrl: "./crud.component.html",
   styleUrls: ["./crud.component.css"],
 })
-export class CrudComponent implements OnInit, OnDestroy {
+export class CrudComponent implements OnInit {
   animals$: Observable<Animal[]>;
   constructor(private _crudService: CrudService) {}
 
   ngOnInit() {
     this.GetAnimals();
-  }
-
-  ngOnDestroy() {
-    // this._crudService.AddAnimal.unsubscribe()
   }
 
   private GetAnimals() {

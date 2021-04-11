@@ -1,3 +1,4 @@
+import { environment } from "./../../../environments/environment";
 import {
   HttpClient,
   HttpErrorResponse,
@@ -17,8 +18,7 @@ export class CrudService {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
   };
 
-  urlBase = `http://localhost:5050/api/`;
-  urlAnimals = this.urlBase + "animal/";
+  urlAnimals = environment.urlBase + "animal/";
 
   constructor(private _http: HttpClient) {}
 
@@ -35,7 +35,7 @@ export class CrudService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  public DeleteAnimal(id: number) {
+  public DeleteAnimal(id: number): Observable<Animal> {
     return this._http
       .delete<Animal>(`${this.urlAnimals} ${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));

@@ -2,11 +2,7 @@ import { CrudService } from "./../../../core/services/crud.service";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, NgForm, Validators } from "@angular/forms";
 
-import {
-  MatSnackBar,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
-} from "@angular/material/snack-bar";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-add-animal",
@@ -36,14 +32,13 @@ export class AddAnimalComponent implements OnInit {
   SaveAnimal(form: NgForm) {
     const animal = this.formAnimal.value;
     this._curdService.AddAnimal(animal).subscribe(() => {
-      console.log("AnimalSalvo!!!");
       this.openSnackBar();
       form.resetForm();
     });
   }
 
   openSnackBar() {
-    this._snackBar.open("Animal adicionado!", "X", {
+    this._snackBar.open("Animal foi adicionado!", "X", {
       duration: 1500,
       horizontalPosition: "right",
       verticalPosition: "top",
