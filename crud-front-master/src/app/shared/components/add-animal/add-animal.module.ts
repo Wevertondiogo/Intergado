@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { AddAnimalComponent } from "./add-animal.component";
 
 import { MatButtonModule } from "@angular/material/button";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -20,6 +21,7 @@ import { MatInputModule } from "@angular/material/input";
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSnackBarModule
   ],
   exports: [AddAnimalComponent],
 })

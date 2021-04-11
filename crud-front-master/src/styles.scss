@@ -10,4 +10,12 @@ body {
   .mat-dialog-container {
     width: 40vw;
   }
+  // .snackBar {
+  // }
+
+  @media (min-width: 280px) and (max-width: 449px) {
+    .mat-list-base .mat-list-item .mat-list-item-content {
+      padding: 0;
+    }
+  }
 }
