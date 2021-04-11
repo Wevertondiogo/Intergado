@@ -10,6 +10,22 @@ body {
   .mat-dialog-container {
     width: 40vw;
   }
+  th.mat-header-cell:first-of-type,
+  td.mat-cell:first-of-type {
+    padding-left: 0;
+  }
+  th.mat-header-cell,
+  td.mat-cell {
+    text-align: center;
+
+    width: 10%;
+  }
+  tr.mat-row {
+    cursor: pointer;
+  }
+  tr.mat-row:hover {
+    background-color: whitesmoke;
+  }
   // .snackBar {
   // }
 

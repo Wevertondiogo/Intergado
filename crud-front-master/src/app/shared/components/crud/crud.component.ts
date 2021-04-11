@@ -11,6 +11,7 @@ import { Animal } from "src/app/models/Animal.model";
 })
 export class CrudComponent implements OnInit {
   animals$: Observable<Animal[]>;
+  dataSource;
   constructor(private _crudService: CrudService) {}
 
   ngOnInit() {
@@ -19,6 +20,7 @@ export class CrudComponent implements OnInit {
 
   private GetAnimals() {
     this.animals$ = this._crudService.GetAnimals();
+    this.dataSource = this.animals$;
   }
 
   public DeleteAnimal(id) {
@@ -26,4 +28,5 @@ export class CrudComponent implements OnInit {
       this.GetAnimals();
     });
   }
+  displayedColumns: string[] = ["id", "manejo", "tag", "options"];
 }

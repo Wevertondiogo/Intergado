@@ -15,6 +15,10 @@
 
 .container {
   padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .title {
   text-align: center;
@@ -61,6 +65,8 @@ p:nth-child(4) {
 
 .btn-delete {
   color: red;
+
+  font-size: 0.9rem;
 }
 
 .box {
@@ -68,6 +74,24 @@ p:nth-child(4) {
 
   display: flex;
   justify-content: center;
+}
+table {
+  width: 100%;
+
+  margin: 25px 0;
+}
+
+th {
+  font-size: 1rem;
+}
+
+td {
+  font-size: 0.9rem;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
 }
 
 .btn-add {
