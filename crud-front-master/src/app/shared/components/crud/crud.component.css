@@ -28,41 +28,6 @@
   margin: 0 auto;
 }
 
-.list {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  margin: 12px 0;
-}
-
-.list-item {
-  box-shadow: 0 0 3px #000;
-  margin: 8px 0;
-
-  cursor: pointer;
-
-  transition: 0.2s ease-in-out;
-}
-.list-item:hover {
-  /* transform: scale(1.1); */
-  background-color: #c2c2c25e;
-}
-p {
-  width: 38%;
-
-  margin: 0 3px;
-}
-
-p:nth-child(4) {
-  display: flex;
-  justify-content: center;
-}
-.align-btn {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .btn-delete {
   color: red;
 
@@ -95,9 +60,15 @@ td {
 }
 
 .btn-add {
-  background-color: #069706;
+  background-color: #005a83;
   color: #fff;
   width: 100%;
+
+  transition: 0.2s ease-out;
+}
+
+.btn-add:hover {
+  background-color: #363532;
 }
 
 @media (min-width: 250px) and (max-width: 557px) {

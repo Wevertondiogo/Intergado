@@ -22,10 +22,17 @@
     margin-top: 20px;
 
     .btn-submit {
-      background-color: #069706;
+      background-color: #005a83;
       color: #fff;
 
       margin-top: 8px;
+      transition: 0.2s ease-out;
+
+      &:not(.btn-submit:disabled) {
+        &:hover {
+          background-color: #363532;
+        }
+      }
 
       &:disabled {
         opacity: 0.5;

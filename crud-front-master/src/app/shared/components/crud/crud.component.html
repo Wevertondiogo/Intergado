@@ -31,18 +31,6 @@
 
   <h1 class="title">Lista de animais registrados.</h1>
 
-  <!-- <mat-list role="list" class="list">
-    <mat-list-item role="listitem" class="list-item" *ngFor="let animal of animals$ | async" >
-      <p>Manejo: {{animal.manejo}} </p>
-      <p>Tag: {{animal.tag}} </p>
-      <p class="align-btn">
-        <button class="btn btn-delete" (click)="DeleteAnimal(animal.id)">Remover</button>
-      </p>
-    </mat-list-item>
-  </mat-list> -->
-
-
-
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="id">
