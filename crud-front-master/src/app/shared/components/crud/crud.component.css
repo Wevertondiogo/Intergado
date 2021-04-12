@@ -75,9 +75,6 @@ td {
   .title {
     font-size: 1.1rem;
   }
-  p {
-    font-size: 0.9rem;
-  }
   .btn {
     font-size: 0.9rem;
   }
@@ -86,14 +83,7 @@ td {
   .title {
     font-size: 1.1rem;
   }
-  p {
-    font-size: 0.9rem;
-    /* margin: 0 5px; */
-  }
   .btn {
     font-size: 0.9rem;
-  }
-  .list-item {
-    /* height: 400px; */
   }
 }
